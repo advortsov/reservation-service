@@ -1,3 +1,8 @@
+/*
+ * VTB Group. Do not reproduce without permission in writing.
+ * Copyright (c) 2019 VTB Group. All rights reserved.
+ */
+
 package com.example.reservationservice;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -25,6 +30,7 @@ import java.util.stream.Stream;
 
 }
 
+//
 @SpringBootApplication
 public class ReservationServiceApplication {
 
@@ -35,7 +41,7 @@ public class ReservationServiceApplication {
   @Bean
   CommandLineRunner commandLineRunner(ReservationRepository reservationRepository) {
     return args -> Stream.of("Ignat", "Josh", "Uhvat", "Kolovrat", "Korneliy")
-        .forEach(n -> reservationRepository.save(new Reservation(n)));
+            .forEach(n -> reservationRepository.save(new Reservation(n)));
   }
 
 }
@@ -70,9 +76,9 @@ class MessageRestController {
 
   @Override public String toString() {
     return "Reservation{" +
-        "id=" + id +
-        ", reservationName='" + reservationName + '\'' +
-        '}';
+            "id=" + id +
+            ", reservationName='" + reservationName + '\'' +
+            '}';
   }
 
   public Long getId() {
